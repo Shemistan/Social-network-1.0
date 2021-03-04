@@ -7,6 +7,7 @@ def index(request):
     ten_posts = Post.objects.all()
     return render(request, "index.html", {"posts": ten_posts}) 
 
+
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.filter(group=group).order_by("-pub_date")[:12]
