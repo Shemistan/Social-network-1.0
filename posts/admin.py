@@ -18,8 +18,3 @@ class GroupAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group)
-
-
-
-
-
