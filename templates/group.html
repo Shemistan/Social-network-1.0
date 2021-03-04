@@ -8,13 +8,13 @@
 
 {% block content %}
   <p>
-    {{group.description}}
+    {{ group.description|linebreaksbr }}
   </p>
   {% for all_posts in posts%}  
     <h3>
       Автор: {{all_posts.author}}, дата публикации: {{all_posts.pub_date|date:"d M Y"}}
     </h3>
-    <p>{{all_posts.text}}</p>
+    <p>{{ all_posts.text|linebreaksbr }}</p>
     <hr>
   {% endfor %}
 {% endblock %}
