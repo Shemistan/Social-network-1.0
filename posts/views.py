@@ -3,7 +3,6 @@ from .models import Post, Group
 
 
 def index(request):
-    
     ten_posts = Post.objects.all()
     return render(request, "index.html", {"posts": ten_posts}) 
 
