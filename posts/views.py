@@ -3,11 +3,11 @@ from .models import Post, Group
 
 
 def index(request):
-    ten_posts = Post.objects.all()
-    return render(request, "index.html", {"posts": ten_posts})
+    selected_posts = Post.objects.order_by("-pub_date")[:10]
+    return render(request, "index.html", {"posts": selected_posts})
 
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by("-pub_date")[:10]
+    posts = group.group_posts.order_by("-pub_date")[:12]
     return render(request, "group.html", {"group": group, "posts": posts})
