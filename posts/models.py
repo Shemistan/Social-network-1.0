@@ -10,7 +10,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="posts")
     group = models.ForeignKey("Group", models.SET_NULL, blank=True,
-                              null=True, related_name="group_posts")
+                              null=True, related_name="posts")
 
     def __str__(self):
         return self.author
@@ -18,7 +18,7 @@ class Post(models.Model):
 
 class Group(models.Model):
     title = models.CharField("Group name", max_length=200)
-    slug = models.SlugField("Page address", max_length=200, unique=True)
+    slug = models.SlugField("Slug", max_length=200, unique=True)
     description = models.TextField(null=True)
 
     def __str__(self):
