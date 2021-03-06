@@ -12,6 +12,9 @@ class Post(models.Model):
     group = models.ForeignKey("Group", models.SET_NULL, blank=True,
                               null=True, related_name="posts")
 
+    class Meta:
+        ordering = ["-pub_date"]
+
     def __str__(self):
         return self.author
 
