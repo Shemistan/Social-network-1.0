@@ -3,7 +3,7 @@ from .models import Post, Group
 
 
 def index(request):
-    selected_posts = Post.objects[:11]
+    selected_posts = Post.objects.all()[:11]
     return render(request, "index.html", {"posts": selected_posts})
 
 

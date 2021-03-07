@@ -16,7 +16,8 @@ class Post(models.Model):
         ordering = ["-pub_date"]
 
     def __str__(self):
-        return self.author
+        show_to = f'{self.author} {self.pub_date} {self.text}'
+        return show_to
 
 
 class Group(models.Model):
